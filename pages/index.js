@@ -44,6 +44,15 @@ const PomodoroTimer = () => {
     // Handle setting custom work and break durations
     if (!isRunning && (workDuration !== 0 || breakDuration !== 0)) {
       setTimeLeft(workDuration * 60);
+    } else if(workDuration === 0 || breakDuration === 0){
+        if(workDuration === 0 && breakDuration === 0){
+          setWorkDuration(25);
+          setBreakDuration(5);
+          
+        }else{
+          setWorkDuration(workDuration);
+          setBreakDuration(workDuration);
+        }
     }
   };
 
